@@ -1,6 +1,7 @@
 import './index.css';
 
 import App from './App.tsx';
+import { BrowserRouter } from 'react-router';
 import { FirebaseAppProvider } from 'reactfire';
 import FirebaseServices from './config/firebase-services.tsx';
 import { StrictMode } from 'react';
@@ -11,7 +12,9 @@ createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<FirebaseAppProvider firebaseConfig={firebaseConfig}>
 			<FirebaseServices>
-				<App />
+				<BrowserRouter>
+					<App />
+				</BrowserRouter>
 			</FirebaseServices>
 		</FirebaseAppProvider>
 	</StrictMode>
